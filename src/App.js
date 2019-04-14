@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import header from './images/header_small.jpg';
 import './App.css';
+import CastMember from './components/CastMember';
 import EpisodeCard from './components/EpisodeCard';
+import ContactForm from './components/ContactForm';
 import Ep1Thumbnail from './images/episode1_560.jpg';
 import Ep2Thumbnail from './images/episode2_560.jpg';
 import Ep1WatchNow from './images/CSB_560.jpg';
 import Ep2WatchNow from './images/WWB_560.jpg';
+import headshot from './images/placeholder_headshot.jpg';
 
 
 
@@ -42,7 +45,7 @@ class App extends Component {
                 </div>
 
                 <div id="About">
-                    <h1 className="BangersFont">About The Show</h1>
+                    <h1 className="header">About The Show</h1>
                     <p>
                         Pet my belly, you know you want to; seize the hand and shred it! love kitty scratches couch bad kitty. 
                         Do i like standing on litter cuz i sits when i have spaces, my cat buddies have no litter i live in luxury cat 
@@ -53,7 +56,57 @@ class App extends Component {
                         as i think about it and chill
                     </p>
                 </div>
-                    
+
+                <div id="Cast" className="container">
+                    <h1 className="header">Cast &amp; Crew</h1>
+                    <div id="Cast-Inner">
+                        <CastMember
+                            image={headshot}
+                            name="Kyle"
+                            description="This is the best part I've played"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Brandon"
+                            description="This is the best part I've played"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Julie"
+                            description="This is the best part I've played"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Joel"
+                            description="This is the best part I've played"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Hans"
+                            description="This is the best part I've played"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Panthea"
+                            description="This is the best part I've played"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Ellaine"
+                            description="This is the best part I've played"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Olena"
+                            description="This is the best part I've played"
+                        />
+                    </div>
+                </div>
+                
+                <div className="container">
+                    <h1 className="header">Contact Us</h1>
+                    <ContactForm/>
+                </div>
             </div>
         );
     }
