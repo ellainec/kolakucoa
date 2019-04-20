@@ -19,14 +19,15 @@ const EpisodeCard = (props) => {
     const showYoutube = () => {
         if (isMobile) {
             return (
+                <a href={link}>
                 <div className="watchNow">
-                    <h3 className="BangersFont mobile-tablet-only"> Watch Now&nbsp;</h3>
+                    <h2 className="BangersFont mobile-tablet-only"> Watch Now&nbsp;</h2>
                     <img src= {arrow} alt="arrow pointing to the right"/>
                     <span>&nbsp;</span>
-                    <a href={link}>
                         <img src={youTubeLogo} alt="youtube"/>
-                    </a>
+                    
                 </div>
+                </a>
             )
         }
     }
