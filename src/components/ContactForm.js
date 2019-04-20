@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import youTubeLogo from '../images/youTube.png';
 import instagramLogo from '../images/instagram_icon.jpg';
 import facebookLogo from '../images/facebook.png';
+import paperPlane from '../images/paper-plane.png';
 
 const ContactForm = () => {
     const [ name, setName ] = useState("");
@@ -11,7 +12,13 @@ const ContactForm = () => {
     const [ body, setBody ] = useState("");
     const [ nameError, setNameError ] = useState(false);
     const [ emailError, setEmailError ] = useState(false);
-    const [ bodyError, setBodyError ] = useState(false)
+    const [ bodyError, setBodyError ] = useState(false);
+    const [ hitSend, setHitSent ] = useState(false);
+
+    const handleSend = () => {
+        setHitSent(true);
+        validateForm();
+    }
 
     const validateForm = () => {
         setNameError( !name ? true : false );
@@ -34,31 +41,39 @@ const ContactForm = () => {
             const lastIndex = errors[errors.length-1];
             errors[errors.length-1] = `and ${lastIndex}`;
         }
-        return `All fields are required; please fill in missing ${errors.join(", ")} field${errors.length > 1 ? "s" : ""}.`;
+
+        if (errors.length === 2) {
+            return `All fields are required; please fill in missing ${errors.join(" ")} fields`;
+        }
+
+        if (errors.length === 3) {
+            return `All fields are required; please fill in missing ${errors.join(", ")} fields`;
+        }
     }
 
     const showErrorMsg = () => {
         if (nameError || emailError || bodyError) {
-            return <p>{ createErrorMsg() }</p>
+            return <p className="BangersFont">{ createErrorMsg() }</p>
         }
     }
 
-    return(
-        <div className="ContactDiv">
-            <div className="social">
-                <img src={instagramLogo} alt="gmail logo"/>
-                <img src={youTubeLogo} alt="youtoub logo"/>
-                <img src={facebookLogo} alt="facebook logo"/>
-            </div>
-            <p className="ContactFormText">We'd love to hear from you! Send us a Message
-                with the form below or email us at kolakucoa@gmail.com
-            </p>
+    const showForm = () => {
+        if (hitSend && !nameError && !emailError && !bodyError) {
+            return (
+                <div>
+                    <img className="PaperPlane" src={ paperPlane } alt="paper plane" />
+                    <p className="BangersFont">Message Sent</p>
+                </div>
+            )
+        }
+        return (
+            <React.Fragment>
             <TextField
                 id="standardd-with-placeholder"
                 label="Name"
-                placeholder="Placeholder"
+                placeholder="Name"
                 margin="normal"
-                className="textField"
+                className="textField max-mobile"
                 error = {nameError}
                 value={name}
                 onChange={(event)=>setName(event.target.value)}
@@ -66,9 +81,9 @@ const ContactForm = () => {
             <TextField
                 id="standardd-with-placeholder"
                 label="Email"
-                placeholder="Placeholder"
+                placeholder="Email"
                 margin="normal"
-                className="textField"
+                className="textField max-mobile"
                 error={emailError}
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
@@ -79,16 +94,31 @@ const ContactForm = () => {
                 rows="6"
                 label="Message"
                 margin="normal"
-                className="textField"
+                className="textField max-mobile"
                 error={bodyError}
                 variant="outlined"
                 value={body}
                 onChange={(event) => setBody(event.target.value)}
             />
             { showErrorMsg() }
-            <Button className="sendButton" variant="outlined" color="primary" onClick={()=>validateForm()}>
+            <Button className="sendButton" variant="outlined" color="primary" onClick={()=>handleSend()}>
                     Send
             </Button>
+            </React.Fragment>
+        )
+    }
+
+    return(
+        <div className="ContactDiv">
+            <div className="social">
+                <img src={instagramLogo} alt="gmail logo"/>
+                <img src={youTubeLogo} alt="youtoub logo"/>
+                <img src={facebookLogo} alt="facebook logo"/>
+            </div>
+            <p className="ContactFormText max-mobile">We'd love to hear from you! Send us a Message
+                with the form below or email us at kolakucoa@gmail.com
+            </p>
+            { showForm() }
         </div>
     )
 }

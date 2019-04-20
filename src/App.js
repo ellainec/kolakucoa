@@ -4,23 +4,20 @@ import './App.css';
 import CastMember from './components/CastMember';
 import EpisodeCard from './components/EpisodeCard';
 import ContactForm from './components/ContactForm';
-import Ep1Thumbnail from './images/episode1_560.jpg';
-import Ep2Thumbnail from './images/episode2_560.jpg';
-import Ep1WatchNow from './images/CSB_560.jpg';
-import Ep2WatchNow from './images/WWB_560.jpg';
+import Ep1Thumbnail from './images/episode1.jpg';
+import Ep2Thumbnail from './images/episode2.jpg';
+import Ep1WatchNow from './images/CSB.jpg';
+import Ep2WatchNow from './images/WWB.jpg';
 import headshot from './images/placeholder_headshot.jpg';
 
 
 
 class App extends Component {
+
     render() {
         return (
-            <div className="App">
-                <div className="App-header">
-                    <div>
-                        <img className="Logo" width="537px" src={header} alt="kolakucoa logo" />
-                    </div>
-                </div>
+            <div id="App">
+                <img id="Logo" src={header} alt="kolakucoa logo" />
 
                 <div id="Episode-Div">
                     <EpisodeCard

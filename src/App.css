@@ -1,8 +1,6 @@
-
-.App-header {
-  padding-top: 20px;
-  display: flex;
-  justify-content: center;
+#App {
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .container {
@@ -15,6 +13,7 @@
 
 #Cast-Inner{
   margin-top: 60px;
+  text-align: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -29,10 +28,10 @@
 }
 
 #About {
-  width: 80vw;
+  max-width: 1300px;
+  width: 90%;
   text-align:center;
-  margin: auto;
-  padding-top: 80px;
+  margin: 50px auto 0 auto;
   font-size: 16pt;
 }
 
@@ -51,23 +50,24 @@
 
 #Episode-Div{
   margin-top: 40px;
-  padding: 0 20px;
   display: flex;
   justify-content: space-around;
-  /*background-image: url("./images/download.png");*/
   background-size: cover;
   box-shadow: 0px -30px 30px white inset;
 }
 
 .EpisodeCard {
   width: 560px;
-  background-color: #f4fcf7;
-  padding: 5px 5px 10px 5px;
-  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.EpisodeImage {
+  width: 560px;
 }
 
 .CardDescription {
-  padding: 0px 15px;
+  text-align: center;
+  margin: 0 25px 25px 25px;
 }
 
 .ContactDiv {
@@ -86,7 +86,7 @@
 
 .social{
   margin-top: 15px;
-  width: 400px;
+  max-width: 400px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -99,6 +99,13 @@
 
 .textField {
   width: 400px;
+}
+
+#Logo {
+  display: block;
+  max-width: 90%;
+  height: auto;
+  margin: 20px auto 0 auto;
 }
 
 .Menu {
@@ -117,6 +124,16 @@
   box-shadow: 0px 5px 30px -15px #c0c4c6;  
 }
 
+.watchNow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.PaperPlane {
+  margin-top: 30px;
+}
 button:focus {
   border: none;
   outline: none;
@@ -137,4 +154,70 @@ a:visited {
 
 a:hover {
   text-decoration: none;
+}
+
+
+
+@media (max-width: 1200px) {
+
+  .EpisodeCard {
+    width: 500px;
+  }
+
+  .EpisodeImage {
+    width: 500px;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  #Episode-Div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .EpisodeCard {
+    width: 90%;
+  }
+
+  .EpisodeImage {
+    width: 100%;
+  }
+}
+
+@media (max-width: 860px) {
+  #Cast-Inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  #Cast-Inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+
+  .max-mobile {
+    max-width: 100%;
+  }
+
+  #Episode-Div {
+    width: 100%;
+  }
+
+  .EpisodeCard {
+    width: 100%;
+    padding: 0;
+  }
+  .EpisodeImage {
+    width: 100%;
+  }
+
+  #Cast-Inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
