@@ -24,7 +24,7 @@ const ContactForm = () => {
     }
 
     const sendEmail = () => {
-        const url = "https://sltmrsoftf.execute-api.us-west-2.amazonaws.com/cors-enabled/contact-us";
+        const url = "https://sltmrsoftf.execute-api.us-west-2.amazonaws.com/cors-enabled/kolakucoa";
         return fetch(url, {
             method: "POST",
             headers: {
