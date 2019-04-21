@@ -30,11 +30,11 @@ const ContactForm = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: {
+            body: JSON.stringify({
                 name,
                 email,
                 message
-            }
+            })
         })
     }
 
