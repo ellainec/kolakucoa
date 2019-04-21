@@ -103,6 +103,7 @@
 #Logo {
   display: block;
   max-width: 90%;
+  width: 537px;
   height: auto;
   margin: 20px auto 0 auto;
 }
@@ -133,6 +134,17 @@
 .PaperPlane {
   margin-top: 30px;
 }
+
+.errorText {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+}
+
+.errorText:last-of-type {
+  margin-bottom: 15px;
+}
+
 button:focus {
   border: none;
   outline: none;

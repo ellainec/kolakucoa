@@ -9,56 +9,48 @@ import paperPlane from '../images/paper-plane.png';
 const ContactForm = () => {
     const [ name, setName ] = useState("");
     const [ email, setEmail ] = useState("");
-    const [ body, setBody ] = useState("");
+    const [ message, setMessage ] = useState("");
     const [ nameError, setNameError ] = useState(false);
     const [ emailError, setEmailError ] = useState(false);
-    const [ bodyError, setBodyError ] = useState(false);
-    const [ hitSend, setHitSent ] = useState(false);
+    const [ messageError, setMessageError ] = useState(false);
+    const [ sent, setSent ] = useState(false);
 
     const handleSend = () => {
-        setHitSent(true);
-        validateForm();
+        if (name && validEmail(email) && message) {
+            sendEmail();
+            setSent(true);
+        }
+        setErrorMessages();
     }
 
-    const validateForm = () => {
+    const sendEmail = () => {
+        const url = "https://sltmrsoftf.execute-api.us-west-2.amazonaws.com/Beta/contact-us";
+        return fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: {
+                name,
+                email,
+                message
+            }
+        })
+    }
+
+    const setErrorMessages = () => {
         setNameError( !name ? true : false );
-        setEmailError( !email ? true: false );
-        setBodyError( !body ? true: false );
+        setEmailError( !validEmail(email) ? true: false );
+        setMessageError( !message ? true: false );
     }
 
-    const createErrorMsg = () => {
-        let errors = []; 
-        if (nameError) {
-            errors.push("name");
-        }
-        if (emailError) {
-            errors.push("email");
-        }
-        if (bodyError) {
-            errors.push("message");
-        }
-        if (errors.length > 1) {
-            const lastIndex = errors[errors.length-1];
-            errors[errors.length-1] = `and ${lastIndex}`;
-        }
-
-        if (errors.length === 2) {
-            return `All fields are required; please fill in missing ${errors.join(" ")} fields`;
-        }
-
-        if (errors.length === 3) {
-            return `All fields are required; please fill in missing ${errors.join(", ")} fields`;
-        }
-    }
-
-    const showErrorMsg = () => {
-        if (nameError || emailError || bodyError) {
-            return <p className="BangersFont">{ createErrorMsg() }</p>
-        }
+    const validEmail = (email) => {
+        const valid = !!email.match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/);
+        return valid;
     }
 
     const showForm = () => {
-        if (hitSend && !nameError && !emailError && !bodyError) {
+        if (sent) {
             return (
                 <div>
                     <img className="PaperPlane" src={ paperPlane } alt="paper plane" />
@@ -78,6 +70,7 @@ const ContactForm = () => {
                 value={name}
                 onChange={(event)=>setName(event.target.value)}
             />
+            { nameError && <span className="errorText">Name is missing</span>}
             <TextField
                 id="standardd-with-placeholder"
                 label="Email"
@@ -88,6 +81,7 @@ const ContactForm = () => {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
             />
+            { emailError && <span  className="errorText">Email address is missing or invalid</span>}
             <TextField
                 id="outline-multiline-static"
                 multiline
@@ -95,12 +89,12 @@ const ContactForm = () => {
                 label="Message"
                 margin="normal"
                 className="textField max-mobile"
-                error={bodyError}
+                error={messageError}
                 variant="outlined"
-                value={body}
-                onChange={(event) => setBody(event.target.value)}
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
             />
-            { showErrorMsg() }
+            { messageError && <span className="errorText">Message is missing</span>}
             <Button className="sendButton" variant="outlined" color="primary" onClick={()=>handleSend()}>
                     Send
             </Button>

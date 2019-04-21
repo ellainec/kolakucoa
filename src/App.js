@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import header from './images/header_small.jpg';
+import header from './images/header.jpg';
 import './App.css';
 import CastMember from './components/CastMember';
 import EpisodeCard from './components/EpisodeCard';
 import ContactForm from './components/ContactForm';
-import Ep1Thumbnail from './images/episode1.jpg';
-import Ep2Thumbnail from './images/episode2.jpg';
+import Ep1Thumbnail from './images/CSA.jpg';
+import Ep2Thumbnail from './images/WWA.jpg';
 import Ep1WatchNow from './images/CSB.jpg';
 import Ep2WatchNow from './images/WWB.jpg';
 import headshot from './images/placeholder_headshot.jpg';
