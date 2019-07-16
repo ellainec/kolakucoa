@@ -21,7 +21,7 @@ const EpisodeCard = (props) => {
             return (
                 <a href={link}>
                 <div className="watchNow">
-                    <h2 className="BangersFont mobile-tablet-only"> Watch Now&nbsp;</h2>
+                    <span className="BangersFont mobile-tablet-only"> <span className="size18">W</span>atch Now&nbsp;</span>
                     <img src= {arrow} alt="arrow pointing to the right"/>
                     <span>&nbsp;</span>
                         <img src={youTubeLogo} alt="youtube"/>

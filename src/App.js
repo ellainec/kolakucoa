@@ -42,66 +42,73 @@ class App extends Component {
                 </div>
 
                 <div id="About">
-                    <h1 className="header">About The Show</h1>
+                    <h1 className="header BangersFont">About The Show</h1>
                     <p>
-                        Pet my belly, you know you want to; seize the hand and shred it! love kitty scratches couch bad kitty. 
-                        Do i like standing on litter cuz i sits when i have spaces, my cat buddies have no litter i live in luxury cat 
-                        life attack feet cat not kitten around the door is opening! how exciting oh, it's you, meh, so spend six hours per 
-                        day washing, but still have a crusty butthole yet run outside as soon as door open. Meow all night. Thinking 
-                        longingly about tuna brine. Give attitude. Meeeeouw shake treat bag i shall purr myself to sleep. Lies down the 
-                        fat cat sat on the mat bat away with paws for demand to be let outside at once, and expect owner to wait for me 
-                        as i think about it and chill
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </div>
 
                 <div id="Cast" className="container">
-                    <h1 className="header">Cast &amp; Crew</h1>
+                    <h1 className="header BangersFont">Cast &amp; Crew</h1>
                     <div id="Cast-Inner">
                         <CastMember
                             image={headshot}
                             name="Kyle"
-                            description="This is the best part I've played"
+                            title="Producer, writer, animator, Kyle"
                         />
                         <CastMember
                             image={headshot}
                             name="Brandon"
-                            description="This is the best part I've played"
-                        />
-                        <CastMember
-                            image={headshot}
-                            name="Julie"
-                            description="This is the best part I've played"
-                        />
-                        <CastMember
-                            image={headshot}
-                            name="Joel"
-                            description="This is the best part I've played"
-                        />
-                        <CastMember
-                            image={headshot}
-                            name="Hans"
-                            description="This is the best part I've played"
-                        />
-                        <CastMember
-                            image={headshot}
-                            name="Panthea"
-                            description="This is the best part I've played"
+                            title="Producer, writer, Mike"
                         />
                         <CastMember
                             image={headshot}
                             name="Ellaine"
-                            description="This is the best part I've played"
+                            title="Producer, writer"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Julie"
+                            title="Ellaine"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Joel"
+                            title="Damian"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Hans"
+                            title="Starfish, Po, Clarence"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Panthea"
+                            title="Celeste"
                         />
                         <CastMember
                             image={headshot}
                             name="Olena"
-                            description="This is the best part I've played"
+                            title="Olga"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Stevie"
+                            title="Muscular seal at club"
+                        />
+                        <CastMember
+                            image={headshot}
+                            name="Stephanie"
+                            title="Excited seal at club"
                         />
                     </div>
                 </div>
                 
                 <div className="container">
-                    <h1 className="header">Contact Us</h1>
+                    <h1 className="header BangersFont">Contact Us</h1>
                     <ContactForm/>
                 </div>
             </div>

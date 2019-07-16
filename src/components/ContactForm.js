@@ -5,6 +5,7 @@ import youTubeLogo from '../images/youTube.png';
 import instagramLogo from '../images/instagram_icon.jpg';
 import facebookLogo from '../images/facebook.png';
 import paperPlane from '../images/paper-plane.png';
+import sadFace from '../images/sad.png';
 
 const ContactForm = () => {
     const [ name, setName ] = useState("");
@@ -14,12 +15,20 @@ const ContactForm = () => {
     const [ emailError, setEmailError ] = useState(false);
     const [ messageError, setMessageError ] = useState(false);
     const [ sent, setSent ] = useState(false);
+    const [ sendError, setSendError ] = useState(false);
 
-    const handleSend = () => {
+    const handleSend = async () => {
         if (name && validEmail(email) && message) {
-            sendEmail();
-            setSent(true);
-        }
+            await sendEmail()
+                .then((res) => {
+                    if (res.status === 200) {
+                        setSent(true);
+                    }
+                })
+                .catch((err) => {  
+                    setSendError(true);         
+                });
+        };
         setErrorMessages();
     }
 
@@ -35,7 +44,7 @@ const ContactForm = () => {
                 email,
                 message
             })
-        })
+        });
     }
 
     const setErrorMessages = () => {
@@ -53,8 +62,17 @@ const ContactForm = () => {
         if (sent) {
             return (
                 <div>
-                    <img className="PaperPlane" src={ paperPlane } alt="paper plane" />
+                    <img className="margin-top-30" src={ paperPlane } alt="paper plane" />
                     <p className="BangersFont">Message Sent</p>
+                </div>
+            )
+        }
+
+        if (sendError ) {
+            return (
+                <div>
+                    <img className="margin-top-30" src={ sadFace } alt="sad face" />
+                    <p className="BangersFont">Sorry, something went wrong. Please email us at kolakucoa@gmail.com instead</p>
                 </div>
             )
         }

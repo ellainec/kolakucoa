@@ -36,12 +36,13 @@
 
 .BangersFont {
   font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
 }
 
 .header {
   text-align:center;
   margin: auto;
-  font-family: 'Bangers', cursive;
+  font-size: 24pt;
 }
 .centerText {
   text-align: center;
@@ -124,14 +125,22 @@
   box-shadow: 0px 5px 30px -15px #c0c4c6;  
 }
 
+.size18 {
+  font-size: 22pt;
+}
+
 .watchNow {
+  font-size: 20pt;
   display: flex;
+  color:#0595BA;
+  letter-spacing: 2px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.PaperPlane {
+.margin-top-30 {
   margin-top: 30px;
 }
 
