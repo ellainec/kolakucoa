@@ -6,6 +6,7 @@ import instagramLogo from '../images/instagram_icon.jpg';
 import facebookLogo from '../images/facebook.png';
 import paperPlane from '../images/paper-plane.png';
 import sadFace from '../images/sad.png';
+import twitterLogo from '../images/Twitter_50.png';
 
 const ContactForm = () => {
     const [ name, setName ] = useState("");
@@ -123,9 +124,18 @@ const ContactForm = () => {
     return(
         <div className="ContactDiv">
             <div className="social">
-                <img src={instagramLogo} alt="gmail logo"/>
-                <img src={youTubeLogo} alt="youtoub logo"/>
-                <img src={facebookLogo} alt="facebook logo"/>
+                <a href="https://www.instagram.com/kolakucoa/">
+                    <img src={instagramLogo} alt="gmail logo"/>
+                </a>
+                <a href="https://www.facebook.com/kolakucoa">
+                    <img src={facebookLogo} alt="facebook logo"/>
+                </a>
+                <a href="https://twitter.com/kolakucoa">
+                    <img src={twitterLogo} alt="Twitter logo"/>
+                </a>
+                <a href="https://www.youtube.com/channel/UCbvMBP2S1W67PGMppA1i1ZA">
+                    <img src={youTubeLogo} alt="youtoub logo"/>
+                </a>
             </div>
             <p className="ContactFormText max-mobile">We'd love to hear from you! Send us a Message
                 with the form below or email us at kolakucoa@gmail.com

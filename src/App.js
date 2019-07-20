@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import header from './images/header.jpg';
 import './App.css';
-import CastMember from './components/CastMember';
+import CreditSection from './components/CreditSection';
 import EpisodeCard from './components/EpisodeCard';
 import ContactForm from './components/ContactForm';
 import Ep1Thumbnail from './images/CSA.jpg';
@@ -22,7 +22,7 @@ class App extends Component {
                 <div id="Episode-Div">
                     <EpisodeCard
                         title="Episode 1 - Clam Shots"
-                        link="https://www.google.com"
+                        link="https://www.youtube.com/channel/UCbvMBP2S1W67PGMppA1i1ZA"
                         image={Ep1Thumbnail}
                         watchNowImage={Ep1WatchNow}
                         description="Marine biologist in-training Ellaine travels to Kolakucoa,
@@ -32,7 +32,7 @@ class App extends Component {
 
                     <EpisodeCard
                         title="Episode 2 - Whalefare Wednesday"
-                        link="https://www.google.com"
+                        link="https://www.youtube.com/channel/UCbvMBP2S1W67PGMppA1i1ZA"
                         image={Ep2Thumbnail}
                         watchNowImage={Ep2WatchNow}
                         description="Whales... whales as far as the eye can see.  Can Kyle de-beach a 
@@ -44,65 +44,38 @@ class App extends Component {
                 <div id="About">
                     <h1 className="header BangersFont">About The Show</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Kolakucoa is an animated show, created by three young Vancouverites with a bit of the extra spare 
+                    time needed to create a cartoon.  After teaming up with some great local talent, we bring you the 
+                    result: a young marine biologist travels to the world’s only island where the animals talk back.  
+                    Joined by a sassy turtle, a happy-go-lucky lifeguard, and his pugnacious seal sidekick, our 
+                    heroine sets out on the adventure of a lifetime.
                     </p>
                 </div>
 
                 <div id="Cast" className="container">
                     <h1 className="header BangersFont">Cast &amp; Crew</h1>
                     <div id="Cast-Inner">
-                        <CastMember
-                            image={headshot}
-                            name="Kyle"
-                            title="Producer, writer, animator, Kyle"
+                        <CreditSection
+                            title ="Produced By"
+                            names = {["Kyle Ross", "Ellaine Chan", "Brandon Kohinsky"]}
                         />
-                        <CastMember
-                            image={headshot}
-                            name="Brandon"
-                            title="Producer, writer, Mike"
+                        <CreditSection
+                            title ="Written By"
+                            names = {["Kyle Ross", "Ellaine Chan", "Brandon Kohinsky"]}
                         />
-                        <CastMember
-                            image={headshot}
-                            name="Ellaine"
-                            title="Producer, writer"
-                        />
-                        <CastMember
-                            image={headshot}
-                            name="Julie"
-                            title="Ellaine"
-                        />
-                        <CastMember
-                            image={headshot}
-                            name="Joel"
-                            title="Damian"
-                        />
-                        <CastMember
-                            image={headshot}
-                            name="Hans"
-                            title="Starfish, Po, Clarence"
-                        />
-                        <CastMember
-                            image={headshot}
-                            name="Panthea"
-                            title="Celeste"
-                        />
-                        <CastMember
-                            image={headshot}
-                            name="Olena"
-                            title="Olga"
-                        />
-                        <CastMember
-                            image={headshot}
-                            name="Stevie"
-                            title="Muscular seal at club"
-                        />
-                        <CastMember
-                            image={headshot}
-                            name="Stephanie"
-                            title="Excited seal at club"
+                        <CreditSection
+                            title ="Starring"   
+                            names = {[
+                                "Kyle Ross", 
+                                "Brandon Kohinsky", 
+                                "Julie Tao", 
+                                "Joel McCarthy", 
+                                "Hans Potter", 
+                                "Panthea Vatandoost", 
+                                "Olena Venidiktova",
+                                "Stephanie Cho",
+                                "Stevie Jackson"
+                            ]}
                         />
                     </div>
                 </div>
